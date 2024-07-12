@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Site</title>
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    body {
+      overflow-x: hidden; background-color: #222831;
+    }
+    .fade-out {
+      opacity: 0;
+      transition: opacity 0.5s ease-out;
+    }
+    .fade-in {
+      opacity: 1;
+      transition: opacity 0.5s ease-in;
+    }
+    
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-transparent"> 
+        <div class="container-fluid">                
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
+                aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarID">
+                <div class="navbar-nav">
+                    <a style="color: #EEEEEE;" class="nav-link active" aria-current="page" href="https://www.nordangliaeducation.com/"><img height="40px" width="70px" src="images/images__1_-removebg-preview.png" alt=""></a>
+                    <a style="color: #EEEEEE;" class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    <a style="color: #EEEEEE;" class="nav-link active" aria-current="page" href="definition.html">Definition</a>
+                    <a style="color: #EEEEEE;" class="nav-link active" aria-current="page" href="effects.html">Effects</a>
+                    <a style="color: #EEEEEE;" class="nav-link active" aria-current="page" href="causes.html">Causes</a>
+                    <a style="color: #EEEEEE;" class="nav-link active" aria-current="page" href="solution.html">Solution</a>
+                    <a style="color: #10A5F5;" class="nav-link active" aria-current="page" href="About.html">About</a>
+                    
+                </div>
+            </div>
+        </div>
+    </nav> 
+    <br>
+    <div class="content fade-in">
+        <h1 style="text-align: center;font-size: 50px;color: #EEEEEE;">About us</h1>
+        <br><br><br> <p style="text-align: center;"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3383.6137836073144!2d35.83414961187672!3d31.998483673890277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ca1f19dcde493%3A0x25fc2a31f0ca6e01!2sAmman%20Academy!5e0!3m2!1sen!2sjo!4v1714407352811!5m2!1sen!2sjo" width="600" height="300" style="border:0; justify-content: center;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+        <br>
+        <br>
+        <br>
+        <h1 style="text-align: center;font-size: 50px;color: #EEEEEE;">More information</h1>
+        <br>
+        <br>
+        
+        <p style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/vtfMzmkYp9E?si=MpvLomOAVeJyaIaC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> </p>
+    </div>
+
+    
+    <script>
+        
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const href = this.getAttribute('href');
+                const content = document.querySelector('.content');
+                content.classList.remove('fade-in');
+                content.classList.add('fade-out');
+                setTimeout(function() {
+                    window.location.href = href;
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>

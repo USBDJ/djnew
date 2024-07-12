@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Site</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <style>
+    body {
+      overflow-x: hidden;background-color: #222831;
+    }
+    .fade-out {
+      opacity: 0;
+      transition: opacity 0.5s ease-out;
+    }
+    .fade-in {
+      opacity: 1;
+      transition: opacity 0.5s ease-in;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-transparent"> 
+        <div class="container-fluid">                
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
+                aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarID">
+                <div class="navbar-nav">
+                    <a style="color: #EEEEEE;" class="nav-link active" aria-current="page" href="https://www.nordangliaeducation.com/"><img height="40px" width="70px" src="images/images__1_-removebg-preview.png" alt=""></a>
+                    <a style="color: #EEEEEE;" class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    <a style="color: #EEEEEE;" class="nav-link active" aria-current="page" href="definition.html">Definition</a>
+                    <a style="color: #10A5F5;" class="nav-link active" aria-current="page" href="effects.html">Effects</a>
+                    <a style="color: #EEEEEE;" class="nav-link active" aria-current="page" href="causes.html">Causes</a>
+                    <a style="color: #EEEEEE;" class="nav-link active" aria-current="page" href="solution.html">Solution</a>
+                    <a style="color: #EEEEEE;" class="nav-link active" aria-current="page" href="About.html">About</a>
+                </div>
+            </div>
+        </div>
+    </nav> 
+    <br>
+    <div class="content fade-in">
+        <h1 style="font-size: 100px;float: left;padding-left: 2%;color: #EEEEEE;">Effects Of CyberBullying </h1> 
+        <img style="float: right;vertical-align: text-top;" height="700px" width="600px" src="images/Blog-2-_Hero-removebg-preview.png" alt="">
+        <h1  style="float: left;padding-left: 2%;color: #EEEEEE;">
+            In addition to mental health problems, elevated stress <br>
+            and anxiety, despair, aggressive outbursts, and low <br>
+            self-esteem, cyberbullying also has these negative <br>
+            repercussions. Even when the bullying has stopped, <br>
+            cyberbullying may have an emotional impact <br>
+            that lasts a lifetime.
+        </h1>
+    </div>
+
+    
+    <script>
+        
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const href = this.getAttribute('href');
+                const content = document.querySelector('.content');
+                content.classList.remove('fade-in');
+                content.classList.add('fade-out');
+                setTimeout(function() {
+                    window.location.href = href;
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
